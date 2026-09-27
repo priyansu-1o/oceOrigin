@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const OceanMap = dynamic(() => import('@/components/OceanMap'), { ssr: false,
+const OceanMap = dynamic(() => import('@/components/OceanMap'), {
+  ssr: false,
   loading: () => (
     <div style={{ width: '100%', height: '100%', background: 'var(--panel)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--ink-faint)', fontSize: '13px' }}>
       Loading map…
@@ -13,9 +14,9 @@ const OceanMap = dynamic(() => import('@/components/OceanMap'), { ssr: false,
 });
 
 const VESSELS = [
-  { id: 'A', name: 'MV Kaveri Star',  mmsi: '419 002 481', type: 'Tanker · IMO 9312410',     dist: '3.2 km', dt: '+22 min',  bias: 0.66, color: 'var(--red)' },
-  { id: 'B', name: 'MT Porbandar',    mmsi: '419 118 226', type: 'Tanker · IMO 9204471',     dist: '7.8 km', dt: '−54 min', bias: 0.34, color: 'var(--amber)' },
-  { id: 'C', name: 'MV Coromandel',   mmsi: '419 004 733', type: 'Bulk carrier · IMO 9118820', dist: '11.4 km', dt: '+3h 10m', bias: 0.12, color: 'var(--ink-faint)' },
+  { id: 'A', name: 'MV Kaveri Star', mmsi: '419 002 481', type: 'Tanker · IMO 9312410', dist: '3.2 km', dt: '+22 min', bias: 0.66, color: 'var(--red)' },
+  { id: 'B', name: 'MT Porbandar', mmsi: '419 118 226', type: 'Tanker · IMO 9204471', dist: '7.8 km', dt: '−54 min', bias: 0.34, color: 'var(--amber)' },
+  { id: 'C', name: 'MV Coromandel', mmsi: '419 004 733', type: 'Bulk carrier · IMO 9118820', dist: '11.4 km', dt: '+3h 10m', bias: 0.12, color: 'var(--ink-faint)' },
 ];
 
 const CASE = { id: 'STB-2447', slick: 'SLK-2447-A', area: '4.6 km²', conf: 0.91, date: '2024-11-14 04:22 UTC' };
@@ -36,8 +37,8 @@ function Ring({ value, color, size = 56 }) {
   return (
     <div style={{ position: 'relative', width: size, height: size, flexShrink: 0 }}>
       <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="var(--line)" strokeWidth="5" />
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth="5"
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--line)" strokeWidth="5" />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={color} strokeWidth="5"
           strokeDasharray={circ} strokeDashoffset={offset} strokeLinecap="round"
           style={{ transition: 'stroke-dashoffset 0.6s ease, stroke 0.4s ease' }}
         />
@@ -147,8 +148,8 @@ export default function AttributePage() {
             }}
           >
             {running
-              ? <><svg style={{ animation: 'spin 1s linear infinite' }} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" strokeDasharray="40"/></svg>Run {runCount}/8…</>
-              : <><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 2h6v4H9z"/><path d="M9 6H6a1 1 0 00-1 1v13a1 1 0 001 1h12a1 1 0 001-1V7a1 1 0 00-1-1h-3"/></svg>Run stability test</>
+              ? <><svg style={{ animation: 'spin 1s linear infinite' }} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" strokeDasharray="40" /></svg>Run {runCount}/8…</>
+              : <><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 2h6v4H9z" /><path d="M9 6H6a1 1 0 00-1 1v13a1 1 0 001 1h12a1 1 0 001-1V7a1 1 0 00-1-1h-3" /></svg>Run stability test</>
             }
           </button>
         </div>
@@ -289,7 +290,7 @@ export default function AttributePage() {
               </div>
               {sorted.map((v, i) => (
                 <div key={v.id} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                  <div style={{ fontSize: '10px', fontFamily: 'var(--mono)', color: 'var(--ink-faint)', width: '14px' }}>#{i+1}</div>
+                  <div style={{ fontSize: '10px', fontFamily: 'var(--mono)', color: 'var(--ink-faint)', width: '14px' }}>#{i + 1}</div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11.5px', marginBottom: '3px' }}>
                       <span style={{ fontWeight: 600 }}>{v.name.split(' ').slice(-2).join(' ')}</span>

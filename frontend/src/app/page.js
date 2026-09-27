@@ -149,9 +149,9 @@ const FEATURES = [
     href: '/detect',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-        <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
-        <path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4"/>
+        <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" />
+        <rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" />
+        <path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4" />
       </svg>
     ),
     label: '01 / Detect',
@@ -165,8 +165,8 @@ const FEATURES = [
     href: '/transport',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-        <path d="M3 12c3-4 6-4 9 0s6 4 9 0"/><path d="M3 6c3-4 6-4 9 0s6 4 9 0"/>
-        <path d="M3 18c3-4 6-4 9 0s6 4 9 0"/>
+        <path d="M3 12c3-4 6-4 9 0s6 4 9 0" /><path d="M3 6c3-4 6-4 9 0s6 4 9 0" />
+        <path d="M3 18c3-4 6-4 9 0s6 4 9 0" />
       </svg>
     ),
     label: '02 / Reconstruct',
@@ -180,8 +180,8 @@ const FEATURES = [
     href: '/attribute',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-        <path d="M11 8v3l2 2"/>
+        <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
+        <path d="M11 8v3l2 2" />
       </svg>
     ),
     label: '03 / Attribute',
@@ -276,7 +276,7 @@ export default function HomePage() {
                 boxShadow: '0 0 30px rgba(14,165,183,0.35)', transition: 'all 0.2s',
               }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                  <polygon points="5 3 19 12 5 21 5 3"/>
+                  <polygon points="5 3 19 12 5 21 5 3" />
                 </svg>
                 Launch Attribution
               </Link>
@@ -292,7 +292,7 @@ export default function HomePage() {
             </div>
 
             {/* Tech pills */}
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '28px' }}>
+            {/* <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '28px' }}>
               {['Python', 'NumPy', 'xarray', 'GeoPandas', 'Shapely', 'Lagrangian'].map(t => (
                 <span key={t} style={{
                   fontFamily: 'var(--mono)', fontSize: '10.5px', fontWeight: 500,
@@ -302,7 +302,7 @@ export default function HomePage() {
                   {t}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right radar */}
@@ -320,7 +320,7 @@ export default function HomePage() {
         }}>
           Scroll to explore
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
+            <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
         </div>
       </section>
@@ -467,7 +467,7 @@ export default function HomePage() {
                 }}>
                   Open module
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
               </div>
@@ -505,7 +505,7 @@ export default function HomePage() {
           boxShadow: '0 0 40px rgba(14,165,183,0.4)', transition: 'all 0.2s',
         }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-            <polygon points="5 3 19 12 5 21 5 3"/>
+            <polygon points="5 3 19 12 5 21 5 3" />
           </svg>
           Run Stability Test
         </Link>

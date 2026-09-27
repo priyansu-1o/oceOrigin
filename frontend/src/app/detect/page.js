@@ -54,12 +54,12 @@ function SARView({ record }) {
           radial-gradient(ellipse 60% 40% at 48% 58%, rgba(14,165,183,0.05) 0%, transparent 70%),
           radial-gradient(ellipse 80% 80% at 30% 30%, rgba(20,40,70,0.5) 0%, transparent 60%)
         `,
-      }}/>
+      }} />
 
       {/* Noise texture overlay */}
       <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.18 }}>
-        <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
-        <rect width="100%" height="100%" filter="url(#noise)"/>
+        <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /><feColorMatrix type="saturate" values="0" /></filter>
+        <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
 
       {/* Slick polygon (dark on dark) */}
@@ -81,29 +81,29 @@ function SARView({ record }) {
         <ellipse cx="430" cy="260" rx="147" ry="57" fill="none" stroke="rgba(14,165,183,0.45)" strokeWidth="1.5" />
 
         {/* Measurement lines */}
-        <line x1="285" y1="260" x2="575" y2="260" stroke="rgba(14,165,183,0.6)" strokeWidth="1" strokeDasharray="4 4"/>
+        <line x1="285" y1="260" x2="575" y2="260" stroke="rgba(14,165,183,0.6)" strokeWidth="1" strokeDasharray="4 4" />
         <text x="430" y="248" textAnchor="middle" fontSize="10" fill="rgba(14,165,183,0.9)" fontFamily="monospace">4.6 km</text>
-        <line x1="430" y1="203" x2="430" y2="315" stroke="rgba(14,165,183,0.6)" strokeWidth="1" strokeDasharray="4 4"/>
+        <line x1="430" y1="203" x2="430" y2="315" stroke="rgba(14,165,183,0.6)" strokeWidth="1" strokeDasharray="4 4" />
         <text x="450" y="268" fontSize="10" fill="rgba(14,165,183,0.9)" fontFamily="monospace">1.1 km</text>
 
         {/* Coordinate markers */}
-        <circle cx="430" cy="260" r="3" fill="#0EA5B7"/>
+        <circle cx="430" cy="260" r="3" fill="#0EA5B7" />
         <text x="444" y="244" fontSize="9" fill="rgba(14,165,183,0.8)" fontFamily="monospace">13.222°N 80.446°E</text>
 
         {/* Heading indicator */}
-        <line x1="350" y1="300" x2="510" y2="220" stroke="rgba(220,138,31,0.5)" strokeWidth="1.5" strokeDasharray="6 4"/>
+        <line x1="350" y1="300" x2="510" y2="220" stroke="rgba(220,138,31,0.5)" strokeWidth="1.5" strokeDasharray="6 4" />
         <text x="360" y="318" fontSize="9" fill="rgba(220,138,31,0.8)" fontFamily="monospace">248° drift</text>
 
         {/* HUD corners */}
-        <path d="M10 10 L10 30 L30 10 Z" fill="none" stroke="rgba(14,165,183,0.4)" strokeWidth="1.5"/>
-        <path d="M790 10 L790 30 L770 10 Z" fill="none" stroke="rgba(14,165,183,0.4)" strokeWidth="1.5"/>
-        <path d="M10 440 L10 420 L30 440 Z" fill="none" stroke="rgba(14,165,183,0.4)" strokeWidth="1.5"/>
-        <path d="M790 440 L790 420 L770 440 Z" fill="none" stroke="rgba(14,165,183,0.4)" strokeWidth="1.5"/>
+        <path d="M10 10 L10 30 L30 10 Z" fill="none" stroke="rgba(14,165,183,0.4)" strokeWidth="1.5" />
+        <path d="M790 10 L790 30 L770 10 Z" fill="none" stroke="rgba(14,165,183,0.4)" strokeWidth="1.5" />
+        <path d="M10 440 L10 420 L30 440 Z" fill="none" stroke="rgba(14,165,183,0.4)" strokeWidth="1.5" />
+        <path d="M790 440 L790 420 L770 440 Z" fill="none" stroke="rgba(14,165,183,0.4)" strokeWidth="1.5" />
 
         {/* Info boxes */}
-        <rect x="10" y="10" width="120" height="16" fill="rgba(0,0,0,0.5)"/>
+        <rect x="10" y="10" width="120" height="16" fill="rgba(0,0,0,0.5)" />
         <text x="14" y="22" fontSize="9" fill="rgba(14,165,183,0.85)" fontFamily="monospace">SENTINEL-1A · IW · VV</text>
-        <rect x="10" y="30" width="140" height="14" fill="rgba(0,0,0,0.5)"/>
+        <rect x="10" y="30" width="140" height="14" fill="rgba(0,0,0,0.5)" />
         <text x="14" y="41" fontSize="8.5" fill="rgba(100,150,200,0.7)" fontFamily="monospace">2024-11-14 04:22 UTC</text>
       </svg>
 
@@ -113,7 +113,7 @@ function SARView({ record }) {
         background: 'linear-gradient(90deg, transparent 0%, rgba(14,165,183,0.6) 50%, transparent 100%)',
         top: `${scanPos}%`, transition: 'none',
         boxShadow: '0 0 20px rgba(14,165,183,0.3)',
-      }}/>
+      }} />
 
       {/* Status badge */}
       <div style={{
@@ -180,8 +180,8 @@ export default function DetectPage() {
             }}
           >
             {analyzing
-              ? <><svg style={{ animation: 'spin 1s linear infinite' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" strokeDasharray="40"/></svg>Analysing…</>
-              : <><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 2h6v4H9z"/><path d="M9 6H6a1 1 0 00-1 1v13a1 1 0 001 1h12a1 1 0 001-1V7a1 1 0 00-1-1h-3"/></svg>Run SAR Analysis</>
+              ? <><svg style={{ animation: 'spin 1s linear infinite' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" strokeDasharray="40" /></svg>Analysing…</>
+              : <><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 2h6v4H9z" /><path d="M9 6H6a1 1 0 00-1 1v13a1 1 0 001 1h12a1 1 0 001-1V7a1 1 0 00-1-1h-3" /></svg>Run SAR Analysis</>
             }
           </button>
         </div>
@@ -193,7 +193,7 @@ export default function DetectPage() {
               height: '100%', width: `${progress}%`,
               background: done ? 'var(--green)' : 'linear-gradient(90deg, var(--teal-dim), var(--teal))',
               transition: 'width 0.1s linear',
-            }}/>
+            }} />
           </div>
         )}
 

@@ -4,11 +4,13 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const OceanMap = dynamic(() => import('@/components/OceanMap'), { ssr: false, loading: () => (
-  <div style={{ width: '100%', height: '100%', background: 'var(--panel)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--ink-faint)', fontSize: '13px' }}>
-    Loading map…
-  </div>
-) });
+const OceanMap = dynamic(() => import('@/components/OceanMap'), {
+  ssr: false, loading: () => (
+    <div style={{ width: '100%', height: '100%', background: 'var(--panel)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--ink-faint)', fontSize: '13px' }}>
+      Loading map…
+    </div>
+  )
+});
 
 const PARTICLES_COUNT = 60;
 
@@ -64,7 +66,7 @@ function ParticleCanvas({ running, step, totalSteps }) {
 
       // Slick polygon
       ctx.beginPath();
-      const slickPts = [[0.48, 0.52],[0.49, 0.50],[0.51, 0.49],[0.52, 0.51],[0.52, 0.54],[0.50, 0.55]];
+      const slickPts = [[0.48, 0.52], [0.49, 0.50], [0.51, 0.49], [0.52, 0.51], [0.52, 0.54], [0.50, 0.55]];
       ctx.moveTo(slickPts[0][0] * W, slickPts[0][1] * H);
       slickPts.forEach(([x, y]) => ctx.lineTo(x * W, y * H));
       ctx.closePath();
@@ -194,8 +196,8 @@ export default function TransportPage() {
             }}
           >
             {running
-              ? <><svg style={{ animation: 'spin 1s linear infinite' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" strokeDasharray="40"/></svg>Simulating…</>
-              : <><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Run Ensemble</>
+              ? <><svg style={{ animation: 'spin 1s linear infinite' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" strokeDasharray="40" /></svg>Simulating…</>
+              : <><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>Run Ensemble</>
             }
           </button>
         </div>
@@ -250,9 +252,9 @@ export default function TransportPage() {
                     flexShrink: 0,
                   }}>
                     {completedScenarios.includes(sc.id)
-                      ? <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      ? <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round"><polyline points="20 6 9 17 4 12" /></svg>
                       : activeScenario === sc.id
-                        ? <svg style={{ animation: 'spin 1s linear infinite' }} width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5"><circle cx="12" cy="12" r="7" strokeDasharray="30"/></svg>
+                        ? <svg style={{ animation: 'spin 1s linear infinite' }} width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5"><circle cx="12" cy="12" r="7" strokeDasharray="30" /></svg>
                         : <span style={{ fontSize: '8px', color: 'var(--ink-faint)', fontWeight: 700 }}>{sc.id}</span>
                     }
                   </div>
